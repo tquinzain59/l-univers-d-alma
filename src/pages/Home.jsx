@@ -1,6 +1,10 @@
 
 import { useNavigate } from 'react-router-dom';
 import { Star, ArrowRight } from 'lucide-react';
+import img1 from '../assets/images/portfolio-1.jpg';
+import img2 from '../assets/images/portfolio-2.jpg';
+import img3 from '../assets/images/portfolio-3.jpg';
+import img4 from '../assets/images/portfolio-4.jpg';
 
 export default function Home() {
     const navigate = useNavigate();
@@ -83,18 +87,20 @@ export default function Home() {
                 </div>
             </div>
 
-            {/* Portfolio Teaser (Mock Images) */}
+            {/* Portfolio Teaser (Real Images) */}
             <div style={{ padding: '20px', marginTop: '40px' }}>
                 <h2 style={{ marginBottom: '20px', textAlign: 'center' }}>Dernières Réalisations</h2>
-                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '10px' }}>
-                    <div style={{ height: '200px', background: '#333', borderRadius: 'var(--radius-md)', overflow: 'hidden', position: 'relative' }}>
-                        <img src="https://images.unsplash.com/photo-1604654894610-df63bc536371?auto=format&fit=crop&w=400&q=80" alt="Nail Art" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    </div>
-                    <div style={{ height: '200px', background: '#333', borderRadius: 'var(--radius-md)', overflow: 'hidden', position: 'relative' }}>
-                        <img src="https://images.unsplash.com/photo-1632922267756-9b712429a54f?auto=format&fit=crop&w=400&q=80" alt="Manucure" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-                    </div>
+                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '15px' }}>
+                    {[img1, img2, img3, img4].map((img, i) => (
+                        <div key={i} style={{ aspectRatio: '1/1', background: '#333', borderRadius: 'var(--radius-md)', overflow: 'hidden', position: 'relative', boxShadow: '0 4px 15px rgba(0,0,0,0.3)' }}>
+                            <img src={img} alt={`Réalisation ${i + 1}`} style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.3s' }}
+                                onMouseOver={e => e.currentTarget.style.transform = 'scale(1.05)'}
+                                onMouseOut={e => e.currentTarget.style.transform = 'scale(1)'}
+                            />
+                        </div>
+                    ))}
                 </div>
-                <div style={{ marginTop: '20px', textAlign: 'center' }}>
+                <div style={{ marginTop: '30px', textAlign: 'center' }}>
                     <a href="https://www.facebook.com/nailstudio.by.k.2024?locale=fr_FR" target="_blank" rel="noreferrer" style={{ textDecoration: 'underline', color: 'var(--accent-secondary)' }}>Voir plus sur Facebook</a>
                 </div>
             </div>
