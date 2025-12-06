@@ -28,14 +28,28 @@ export default function Home() {
                 }}>Nail Studio by Kim</div>
 
                 <h1 style={{
-                    fontSize: '4rem',
-                    lineHeight: '1.1',
+                    fontSize: '5rem',
+                    lineHeight: '1',
                     marginBottom: '20px',
-                    background: 'linear-gradient(to bottom right, #fff, #a5b4fc)',
+                    fontFamily: 'var(--font-display)',
+                    fontWeight: 700,
+                    background: 'linear-gradient(to right, #fff, #e0e7ff)',
                     WebkitBackgroundClip: 'text',
                     WebkitTextFillColor: 'transparent',
-                    fontWeight: 800
-                }}>L'Univers<br />d'Alma</h1>
+                    textShadow: '0 0 20px rgba(217, 70, 239, 0.3)'
+                }}>
+                    L'Univers <br />
+                    <span style={{
+                        fontFamily: 'var(--font-script)',
+                        fontSize: '6rem',
+                        background: 'var(--accent-gradient)',
+                        WebkitBackgroundClip: 'text',
+                        WebkitTextFillColor: 'transparent',
+                        marginLeft: '20px',
+                        display: 'inline-block',
+                        transform: 'rotate(-5deg)'
+                    }}>d'Alma</span>
+                </h1>
 
                 <p style={{
                     color: 'var(--text-secondary)',
